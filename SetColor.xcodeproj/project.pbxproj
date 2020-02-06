@@ -104,8 +104,8 @@
 		2FBC311B23EA966300C1EB48 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				2FBC319923EAB9EA00C1EB48 /* ViewController */,
 				2FBC319623EAB93600C1EB48 /* Storyboard */,
+				2FBC319A23EABA0700C1EB48 /* StartViewController.swift */,
 				2FBC311C23EA968200C1EB48 /* SetGrandientColor.swift */,
 				2F1907E023EBBE88002F2ACA /* Message.swift */,
 			);
@@ -118,14 +118,6 @@
 				2FBC319723EAB96A00C1EB48 /* Main.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		2FBC319923EAB9EA00C1EB48 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				2FBC319A23EABA0700C1EB48 /* StartViewController.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
