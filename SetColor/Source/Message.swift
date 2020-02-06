@@ -14,5 +14,6 @@ public struct  Identifier {
    public static  let lastname = "Last Name"
    public static  let address = "Address"
    public static  let go = "Go"
+   public static  let next = "Next"
      
 }
