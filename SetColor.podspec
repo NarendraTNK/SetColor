@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.license       = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Narendra" => "narendratnk11@gmail.com" }
   spec.platform      = :ios, "12.0"
-  spec.source        = { :git => "http://EXAMPLE/SetColor.git", :tag => "#{spec.version}" }
+  spec.source        = { :git => "https://github.com/NarendraTNK/SetColor.git", :tag => "#{spec.version}" }
   spec.source_files  = "SetColor/Source/*.{swift}"
   spec.swift_version = "5.0"
 
