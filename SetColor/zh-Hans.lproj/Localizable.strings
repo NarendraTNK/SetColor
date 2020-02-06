@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SetColor
+
+  Created by hfcb on 2/6/20.
+  Copyright © 2020 hfcb. All rights reserved.
+*/
+
+"First Name" = "名字";
+"Last Name" = "姓";
+"Address" = "地址";
+"Go" = "走";

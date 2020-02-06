@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1907D823EBB615002F2ACA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F1907DA23EBB615002F2ACA /* Localizable.strings */; };
+		2F1907E123EBBE88002F2ACA /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1907E023EBBE88002F2ACA /* Message.swift */; };
 		2FBC310B23EA964C00C1EB48 /* SetColor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FBC310123EA964C00C1EB48 /* SetColor.framework */; };
 		2FBC311023EA964C00C1EB48 /* SetColorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC310F23EA964C00C1EB48 /* SetColorTests.swift */; };
 		2FBC311223EA964C00C1EB48 /* SetColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 2FBC310423EA964C00C1EB48 /* SetColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -26,6 +28,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F1907D923EBB615002F2ACA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F1907DB23EBB61E002F2ACA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2F1907DC23EBB621002F2ACA /* lo-LA */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "lo-LA"; path = "lo-LA.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		2F1907DD23EBB622002F2ACA /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F1907E023EBBE88002F2ACA /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		2FBC310123EA964C00C1EB48 /* SetColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SetColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FBC310423EA964C00C1EB48 /* SetColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetColor.h; sourceTree = "<group>"; };
 		2FBC310523EA964C00C1EB48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +86,7 @@
 			children = (
 				2FBC311B23EA966300C1EB48 /* Source */,
 				2FBC310423EA964C00C1EB48 /* SetColor.h */,
+				2F1907DA23EBB615002F2ACA /* Localizable.strings */,
 				2FBC310523EA964C00C1EB48 /* Info.plist */,
 			);
 			path = SetColor;
@@ -99,6 +107,7 @@
 				2FBC319923EAB9EA00C1EB48 /* ViewController */,
 				2FBC319623EAB93600C1EB48 /* Storyboard */,
 				2FBC311C23EA968200C1EB48 /* SetGrandientColor.swift */,
+				2F1907E023EBBE88002F2ACA /* Message.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -195,6 +204,9 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				th,
+				"lo-LA",
 			);
 			mainGroup = 2FBC30F723EA964C00C1EB48;
 			productRefGroup = 2FBC310223EA964C00C1EB48 /* Products */;
@@ -213,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FBC319823EAB96A00C1EB48 /* Main.storyboard in Resources */,
+				2F1907D823EBB615002F2ACA /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FBC311D23EA968200C1EB48 /* SetGrandientColor.swift in Sources */,
+				2F1907E123EBBE88002F2ACA /* Message.swift in Sources */,
 				2FBC319B23EABA0700C1EB48 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,6 +266,20 @@
 			targetProxy = 2FBC310C23EA964C00C1EB48 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2F1907DA23EBB615002F2ACA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2F1907D923EBB615002F2ACA /* en */,
+				2F1907DB23EBB61E002F2ACA /* zh-Hans */,
+				2F1907DC23EBB621002F2ACA /* lo-LA */,
+				2F1907DD23EBB622002F2ACA /* th */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2FBC311323EA964C00C1EB48 /* Debug */ = {

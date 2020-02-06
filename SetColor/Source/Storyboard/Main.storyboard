@@ -15,20 +15,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-u7-NMM">
-                                <rect key="frame" x="192" y="270" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-u7-NMM">
+                                <rect key="frame" x="192" y="650" width="30" height="30"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.90432195140000005" blue="0.49237478600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="OZp-7a-VLv"/>
+                                    <constraint firstAttribute="height" constant="30" id="rmi-Nn-mgp"/>
+                                </constraints>
                                 <state key="normal" title="Go"/>
+                                <connections>
+                                    <action selector="OnClickGoButton:" destination="qZ3-pu-MOa" eventType="touchUpInside" id="fFa-2c-Km7"/>
+                                </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZIZ-LF-1Uo">
+                                <rect key="frame" x="20" y="101" width="374" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="aba-Ci-JdI"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="English"/>
+                                    <segment title="Chinese"/>
+                                    <segment title="Laos"/>
+                                    <segment title="Thai"/>
+                                </segments>
+                                <connections>
+                                    <action selector="OnClickSegmentControl:" destination="qZ3-pu-MOa" eventType="valueChanged" id="EKn-FG-Z5h"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RqL-OQ-mAl">
+                                <rect key="frame" x="20" y="181" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djy-Ki-2kW">
+                                <rect key="frame" x="20" y="239" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTY-lh-z2c">
+                                <rect key="frame" x="20" y="304" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="LTY-lh-z2c" firstAttribute="top" secondItem="djy-Ki-2kW" secondAttribute="bottom" constant="44" id="6ww-53-mKm"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="RqL-OQ-mAl" secondAttribute="trailing" constant="20" id="86N-7t-WTy"/>
+                            <constraint firstItem="ZIZ-LF-1Uo" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="Ayr-Ij-mRv"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="djy-Ki-2kW" secondAttribute="trailing" constant="20" id="HcC-LR-rFk"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="ZIZ-LF-1Uo" secondAttribute="trailing" constant="20" id="JHV-HB-0gp"/>
+                            <constraint firstItem="djy-Ki-2kW" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="KPZ-dk-rXM"/>
+                            <constraint firstItem="ZIZ-LF-1Uo" firstAttribute="top" secondItem="iXP-Xt-oLc" secondAttribute="top" constant="57" id="Lpq-L8-EID"/>
+                            <constraint firstItem="RqL-OQ-mAl" firstAttribute="top" secondItem="ZIZ-LF-1Uo" secondAttribute="bottom" constant="49" id="Wxz-dJ-gvZ"/>
+                            <constraint firstItem="FMm-u7-NMM" firstAttribute="centerX" secondItem="eOs-nF-gSR" secondAttribute="centerX" id="XFb-qB-OdP"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="LTY-lh-z2c" secondAttribute="trailing" constant="20" id="b3v-N5-lJi"/>
+                            <constraint firstItem="RqL-OQ-mAl" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="duc-T4-LFl"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="bottom" secondItem="FMm-u7-NMM" secondAttribute="bottom" constant="182" id="hWp-7q-r1P"/>
+                            <constraint firstItem="djy-Ki-2kW" firstAttribute="top" secondItem="RqL-OQ-mAl" secondAttribute="bottom" constant="37" id="tNf-qn-tUo"/>
+                            <constraint firstItem="LTY-lh-z2c" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="xnl-ka-XDl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iXP-Xt-oLc"/>
                     </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="LTY-lh-z2c" id="NXb-K1-0Zk"/>
+                        <outlet property="firstNameLabel" destination="RqL-OQ-mAl" id="Xgj-sE-1Vz"/>
+                        <outlet property="gobtnOutlet" destination="FMm-u7-NMM" id="2yK-Hk-w34"/>
+                        <outlet property="languageSegmentControl" destination="ZIZ-LF-1Uo" id="kWV-Wh-2H1"/>
+                        <outlet property="lastNameLabel" destination="djy-Ki-2kW" id="Yx3-aK-8l5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxL-xB-ia6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175" y="86"/>
+            <point key="canvasLocation" x="232" y="46"/>
         </scene>
     </scenes>
 </document>

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SetColor
+
+  Created by hfcb on 2/6/20.
+  Copyright © 2020 hfcb. All rights reserved.
+*/
+
+"First Name" = "ชื่อจริง";
+"Last Name" = "นามสกุล";
+"Address" = "ที่อยู่";
+"Go" = "ไป";
