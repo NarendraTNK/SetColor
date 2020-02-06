@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "SetColor"
-  spec.version       = "1.0.3"
+  spec.version       = "1.0.4"
   spec.summary       = "SetColor pod use for set color to view"
   spec.description   = <<-DESC
                       Lightwidth and small size easy to integrated
@@ -13,6 +13,8 @@ Pod::Spec.new do |spec|
   spec.platform      = :ios, "12.0"
   spec.source        = { :git => "https://github.com/NarendraTNK/SetColor.git", :tag => "#{spec.version}" }
   spec.source_files  = "SetColor/Source/*.{swift}"
+  s.resource_bundle = { 'SetColor' => [ 'SetColorBundle/**/*.{storyboard,lproj}' ] }
+
   spec.swift_version = "5.0"
 
 end

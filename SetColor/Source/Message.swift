@@ -9,8 +9,10 @@
 import Foundation
 
 public struct  Identifier {
-     static  let firstname = "First Name"
-     static  let lastname = "Last Name"
-     static  let address = "Address"
-     static  let go = "Go"
+    
+   public static  let firstname = "First Name"
+   public static  let lastname = "Last Name"
+   public static  let address = "Address"
+   public static  let go = "Go"
+     
 }
