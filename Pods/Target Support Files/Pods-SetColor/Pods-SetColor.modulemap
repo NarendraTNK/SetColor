@@ -1,0 +1,6 @@
+framework module Pods_SetColor {
+  umbrella header "Pods-SetColor-umbrella.h"
+
+  export *
+  module * { export * }
+}
