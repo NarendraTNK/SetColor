@@ -60,6 +60,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPK-iK-Ak3">
+                                <rect key="frame" x="354" y="54" width="40" height="40"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.90432195140000005" blue="0.49237478600000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="HLd-Bf-QSx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="OpenSideMenu:" destination="qZ3-pu-MOa" eventType="touchUpInside" id="z1a-Yz-vyX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -70,13 +82,16 @@
                             <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="ZIZ-LF-1Uo" secondAttribute="trailing" constant="20" id="JHV-HB-0gp"/>
                             <constraint firstItem="djy-Ki-2kW" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="KPZ-dk-rXM"/>
                             <constraint firstItem="ZIZ-LF-1Uo" firstAttribute="top" secondItem="iXP-Xt-oLc" secondAttribute="top" constant="57" id="Lpq-L8-EID"/>
+                            <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="cPK-iK-Ak3" secondAttribute="trailing" constant="20" id="Q2o-DZ-Xsb"/>
                             <constraint firstItem="RqL-OQ-mAl" firstAttribute="top" secondItem="ZIZ-LF-1Uo" secondAttribute="bottom" constant="49" id="Wxz-dJ-gvZ"/>
                             <constraint firstItem="FMm-u7-NMM" firstAttribute="centerX" secondItem="eOs-nF-gSR" secondAttribute="centerX" id="XFb-qB-OdP"/>
                             <constraint firstItem="iXP-Xt-oLc" firstAttribute="trailing" secondItem="LTY-lh-z2c" secondAttribute="trailing" constant="20" id="b3v-N5-lJi"/>
                             <constraint firstItem="RqL-OQ-mAl" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="duc-T4-LFl"/>
                             <constraint firstItem="iXP-Xt-oLc" firstAttribute="bottom" secondItem="FMm-u7-NMM" secondAttribute="bottom" constant="182" id="hWp-7q-r1P"/>
+                            <constraint firstItem="ZIZ-LF-1Uo" firstAttribute="top" secondItem="cPK-iK-Ak3" secondAttribute="bottom" constant="7" id="pUY-RQ-HbA"/>
                             <constraint firstItem="djy-Ki-2kW" firstAttribute="top" secondItem="RqL-OQ-mAl" secondAttribute="bottom" constant="37" id="tNf-qn-tUo"/>
                             <constraint firstItem="LTY-lh-z2c" firstAttribute="leading" secondItem="iXP-Xt-oLc" secondAttribute="leading" constant="20" id="xnl-ka-XDl"/>
+                            <constraint firstItem="cPK-iK-Ak3" firstAttribute="top" secondItem="iXP-Xt-oLc" secondAttribute="top" constant="10" id="yY8-YY-WtE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iXP-Xt-oLc"/>
                     </view>
@@ -90,7 +105,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NxL-xB-ia6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="236" y="54"/>
+            <point key="canvasLocation" x="42" y="48"/>
         </scene>
     </scenes>
 </document>
