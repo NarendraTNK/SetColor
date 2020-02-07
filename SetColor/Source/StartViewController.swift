@@ -23,48 +23,30 @@ public class StartViewController: UIViewController {
     //MARK:- View Cycle
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+        updateLanguage()
     }
     
     //MARK:- IBAction
     @IBAction public func OnClickSegmentControl(_ sender: UISegmentedControl) {
          
          if (sender.selectedSegmentIndex == 0){
-             
-             Bundle.setLanguage(lang: "en")
-             firstNameLabel.text = Identifier.firstname.localized()
-             lastNameLabel.text = Identifier.lastname.localized()
-             addressLabel.text = Identifier.address.localized()
-             gobtnOutlet.setTitle(Identifier.go.localized(), for: .normal)
-             
+             LanguageManager.shared.currentLanguage = .en
          }else if (sender.selectedSegmentIndex == 1){
-             
-             Bundle.setLanguage(lang: "zh-Hans")
-             firstNameLabel.text = Identifier.firstname.localized()
-             lastNameLabel.text = Identifier.lastname.localized()
-             addressLabel.text = Identifier.address.localized()
-             gobtnOutlet.setTitle(Identifier.go.localized(), for: .normal)
-             
+            LanguageManager.shared.currentLanguage = .zhHans
          }else if (sender.selectedSegmentIndex == 2){
-             
-             Bundle.setLanguage(lang: "lo-LA")
-             firstNameLabel.text = Identifier.firstname.localized()
-             lastNameLabel.text = Identifier.lastname.localized()
-             addressLabel.text = Identifier.address.localized()
-             gobtnOutlet.setTitle(Identifier.go.localized(), for: .normal)
-             
+            LanguageManager.shared.currentLanguage = .lao
          }else if (sender.selectedSegmentIndex == 3){
-             
-             Bundle.setLanguage(lang: "th")
-             firstNameLabel.text = Identifier.firstname.localized()
-             lastNameLabel.text = Identifier.lastname.localized()
-             addressLabel.text = Identifier.address.localized()
-             gobtnOutlet.setTitle(Identifier.go.localized(), for: .normal)
-             
+            LanguageManager.shared.currentLanguage = .th
          }
-    
      }
+    
+    func updateLanguage()  {
+        firstNameLabel.text = Identifier.firstname.localiz()
+        lastNameLabel.text = Identifier.lastname.localiz()
+        addressLabel.text = Identifier.address.localiz()
+        gobtnOutlet.setTitle(Identifier.go.localiz(), for: .normal)
+    }
+    
     @IBAction public func OnClickGoButton(_ sender: UIButton) {
         
         
@@ -81,35 +63,7 @@ public class StartViewController: UIViewController {
         sideMenuView.popIn()
         
     }
-
 }
-extension Bundle {
-    private static var bundle: Bundle!
 
-    public static func localizedBundle() -> Bundle! {
-        if bundle == nil {
-            let appLang = UserDefaults.standard.string(forKey: "app_lang") ?? "en"
-            let path = Bundle.main.path(forResource: appLang, ofType: "lproj")
-            bundle = Bundle(path: path!)
-        }
-
-        return bundle;
-    }
-
-    public static func setLanguage(lang: String) {
-        UserDefaults.standard.set(lang, forKey: "app_lang")
-        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
-        bundle = Bundle(path: path!)
-    }
-}
-extension String {
-    func localized() -> String {
-        return NSLocalizedString(self, tableName: nil, bundle: Bundle.localizedBundle(), value: "", comment: "")
-    }
-
-    func localizeWithFormat(arguments: CVarArg...) -> String{
-        return String(format: self.localized(), arguments: arguments)
-    }
-}
 
 
