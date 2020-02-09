@@ -71,7 +71,10 @@ extension SideMenu {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
          
-        cell.menuImageView.image = UIImage(named: menuArray[indexPath.row]["imageName"].string!)
+        cell.menuImageView.image = self.bundledImage(named: menuArray[indexPath.row]["imageName"].string!)
+            
+            //UIImage(named: menuArray[indexPath.row]["imageName"].string!)
+        
         cell.menuLabel.text = menuArray[indexPath.row]["menuname"].string?.localiz()
         
         return cell
@@ -87,4 +90,12 @@ extension SideMenu {
         self.removeFromSuperview()
         delegate?.openMenuAction(selectedValue: indexPath.row, viewController: menuArray[indexPath.row]["viewController"].string!)
     }
+    func bundledImage(named: String) -> UIImage? {
+        let image = UIImage(named: named)
+        if image == nil {
+            return UIImage(named: named, in: Bundle(for: self.classForCoder()), compatibleWith: nil)
+        } // Replace MyBasePodClass with yours
+        return image
+    }
 }
+
