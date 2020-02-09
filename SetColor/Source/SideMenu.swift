@@ -71,7 +71,7 @@ extension SideMenu {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
          
-        cell.menuImageView.image = self.bundledImage(named: menuArray[indexPath.row]["imageName"].string!)
+        cell.menuImageView.image = ImageHelper.image(menuArray[indexPath.row]["imageName"].string!)
             
             //UIImage(named: menuArray[indexPath.row]["imageName"].string!)
         
@@ -93,9 +93,19 @@ extension SideMenu {
     func bundledImage(named: String) -> UIImage? {
         let image = UIImage(named: named)
         if image == nil {
-            return UIImage(named: named, in: Bundle(for: self.classForCoder()), compatibleWith: nil)
+            return UIImage(named: named, in: Bundle(for: NSObject.self.classForCoder()), compatibleWith: nil)
         } // Replace MyBasePodClass with yours
         return image
     }
 }
 
+class ImageHelper {
+    static func image(_ name: String) -> UIImage? {
+        let podBundle = Bundle(for: ImageHelper.self) // for getting pod url
+        if let url = podBundle.url(forResource: "SetColor", withExtension: "bundle") { //<YourBundleName> must be the same as you wrote in .podspec
+            let bundle = Bundle(url: url)
+            return UIImage(named: name, in: bundle, compatibleWith: nil)
+        }
+        return UIImage()
+    }
+}
