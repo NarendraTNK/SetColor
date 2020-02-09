@@ -28,18 +28,9 @@ class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
         menuTableView.delegate = self
         menuTableView.dataSource = self
         //Register XIB to the tableView
-        
-        let podBundle = Bundle(identifier: "org.cocoapods.SetColor")
-        if let bundleURL = podBundle?.url(forResource: "SetColor", withExtension: "bundle") {
-            if let bundle = Bundle(url: bundleURL) {
-                let cellNib = UINib(nibName: "MenuTableViewCell", bundle: bundle)
-            menuTableView.register(cellNib,forCellReuseIdentifier:"MenuTableViewCell")
-            }else {
-                assertionFailure("Could not load the bundle")
-            }
-        }else {
-            assertionFailure("Could not create a path to the bundle")
-        }
+        let bundle = Bundle(for: self.classForCoder)
+        let nib = UINib(nibName: "MenuTableViewCell", bundle: bundle)
+        self.menuTableView.register(nib, forCellReuseIdentifier: "MenuTableViewCell")
         //Remove extra cells from tableView
         menuTableView.tableFooterView = UIView()
         readJsonFromBunble()
@@ -76,15 +67,12 @@ extension SideMenu {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = menuTableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell") as? MenuTableViewCell
-        if cell == nil {
-            menuTableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuTableViewCell")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
          
-        cell?.menuImageView.image = UIImage(named: menuArray[indexPath.row]["imageName"].string!)
-        cell?.menuLabel.text = menuArray[indexPath.row]["menuname"].string?.localiz()
+        cell.menuImageView.image = UIImage(named: menuArray[indexPath.row]["imageName"].string!)
+        cell.menuLabel.text = menuArray[indexPath.row]["menuname"].string?.localiz()
         
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
