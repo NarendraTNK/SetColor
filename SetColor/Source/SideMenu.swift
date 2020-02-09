@@ -95,7 +95,7 @@ extension SideMenu {
 class ImageHelper {
     static func image(_ name: String) -> UIImage? {
         let podBundle = Bundle(for: ImageHelper.self) // for getting pod url
-        if let url = podBundle.url(forResource: "SetColor", withExtension: "bundle") { //<YourBundleName> must be the same as you wrote in .podspec
+        if let url = podBundle.url(forResource: "SetColor", withExtension: "xcassets") { //<YourBundleName> must be the same as you wrote in .podspec
             let bundle = Bundle(url: url)
             return UIImage(named: name, in: bundle, compatibleWith: nil)
         }
