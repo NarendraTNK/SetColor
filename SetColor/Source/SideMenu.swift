@@ -90,13 +90,6 @@ extension SideMenu {
         self.removeFromSuperview()
         delegate?.openMenuAction(selectedValue: indexPath.row, viewController: menuArray[indexPath.row]["viewController"].string!)
     }
-    func bundledImage(named: String) -> UIImage? {
-        let image = UIImage(named: named)
-        if image == nil {
-            return UIImage(named: named, in: Bundle(for: NSObject.self.classForCoder()), compatibleWith: nil)
-        } // Replace MyBasePodClass with yours
-        return image
-    }
 }
 
 class ImageHelper {
