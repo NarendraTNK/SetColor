@@ -28,6 +28,7 @@ class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
         menuTableView.delegate = self
         menuTableView.dataSource = self
         //Register XIB to the tableView
+        
         let podBundle = Bundle(for: self.classForCoder)
         if let bundleURL = podBundle.url(forResource: "SetColor", withExtension: "bundle") {
             if let bundle = Bundle(url: bundleURL) {
