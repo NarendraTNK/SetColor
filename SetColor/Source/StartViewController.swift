@@ -54,7 +54,8 @@ public class StartViewController: UIViewController {
     
     @IBAction func OpenSideMenu(_ sender: Any) {
         
-        sideMenuView = Bundle.main.loadNibNamed("SideMenu", owner: self, options: nil)?[0] as! SideMenu
+        let podBundle = Bundle(for: self.classForCoder)
+        sideMenuView = podBundle.loadNibNamed("SideMenu", owner: self, options: nil)?[0] as! SideMenu
         sideMenuView.delegate = self as? menuOpen
         sideMenuView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         sideMenuView.autoresizingMask = [.flexibleHeight, .flexibleWidth]

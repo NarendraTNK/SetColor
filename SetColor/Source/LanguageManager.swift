@@ -203,7 +203,9 @@ fileprivate extension Bundle {
     }
     
     @objc  private func customLocaLizedString(forKey key:String,value:String?,table:String?)->String{
-        if let bundle = Bundle.main.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj"),
+        
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundle = podBundle.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj"),
             let langBundle = Bundle(path: bundle){
             return langBundle.customLocaLizedString(forKey: key, value: value, table: table)
         }else {

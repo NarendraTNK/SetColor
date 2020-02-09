@@ -28,7 +28,17 @@ class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
         menuTableView.delegate = self
         menuTableView.dataSource = self
         //Register XIB to the tableView
-        menuTableView.register(UINib(nibName: "MenuTableViewCell", bundle: nil), forCellReuseIdentifier: "MenuTableViewCell")
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundleURL = podBundle.url(forResource: "SetColor", withExtension: "bundle") {
+            if let bundle = Bundle(url: bundleURL) {
+                let cellNib = UINib(nibName: "MenuTableViewCell", bundle: bundle)
+            menuTableView.register(cellNib,forCellReuseIdentifier:"MenuTableViewCell")
+            }else {
+                assertionFailure("Could not load the bundle")
+            }
+        }else {
+            assertionFailure("Could not create a path to the bundle")
+        }
         //Remove extra cells from tableView
         menuTableView.tableFooterView = UIView()
         readJsonFromBunble()
