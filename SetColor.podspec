@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "SetColor"
-  spec.version       = "1.0.14"
+  spec.version       = "1.0.15"
   spec.summary       = "SetColor pod use for set color to view"
   spec.description   = <<-DESC
                       Lightwidth and small size easy to integrated
@@ -17,11 +17,6 @@ Pod::Spec.new do |spec|
   spec.dependency "SimpleAnimation"
   spec.source_files  = "SetColor/Source/*.{swift}"
   spec.resources = "SetColor/**/*.{storyboard,lproj,xib,xcassets,json}"
-  spec.resource_bundles = {
-    'SetColor' => [
-        'Pod/**/*.xib'
-    ]
-  }
   spec.swift_version = "4.2"
 
 end
