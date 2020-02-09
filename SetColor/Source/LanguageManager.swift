@@ -189,7 +189,6 @@ fileprivate extension Bundle {
         
         let orginalSelector = #selector(localizedString(forKey:value:table:))
         let swizzledSelector = #selector(customLocaLizedString(forKey:value:table:))
-/Users/hfcb/Documents/MakeIt/SetColor/SetColor/Source/SideMenu.swift
         let orginalMethod = class_getInstanceMethod(self, orginalSelector)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
         
