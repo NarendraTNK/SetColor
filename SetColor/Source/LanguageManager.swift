@@ -225,8 +225,8 @@ public extension String {
     ///
   func localiz(comment: String = "") -> String {
     
-        let bundle1 = Bundle(for: LanguageManager.self)
-        guard let bundle = bundle1.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj") else {
+        let bundle1 = Bundle(identifier: "org.cocoapods.SetColor")
+        guard let bundle = bundle1?.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj") else {
             return NSLocalizedString(self, comment: comment)
          }
         
