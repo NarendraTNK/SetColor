@@ -70,11 +70,12 @@ extension SideMenu {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuTableViewCell", for: indexPath) as! MenuTableViewCell
-         
-        cell.menuImageView.image = ImageHelper.image(menuArray[indexPath.row]["imageName"].string!)
-            
+//        let onepasswordExtensionResourcesBundle = Bundle(path: Bundle(for: OnePasswordExtension.self).path(forResource: "OnePasswordExtensionResources", ofType: "bundle") ?? "")
+//        let image = UIImage(named: "onepassword-button.png", in: onepasswordExtensionResourcesBundle, compatibleWith: nil)
+        let bundle: Bundle = Bundle(identifier: "org.cocoapods.SetColor")!
+        cell.menuImageView.image =  UIImage(named: menuArray[indexPath.row]["imageName"].string!, in: bundle, compatibleWith: nil)
+            //cell.menuImageView.image = ImageHelper.image(menuArray[indexPath.row]["imageName"].string!)
             //UIImage(named: menuArray[indexPath.row]["imageName"].string!)
-        
         cell.menuLabel.text = menuArray[indexPath.row]["menuname"].string?.localiz()
         
         return cell
