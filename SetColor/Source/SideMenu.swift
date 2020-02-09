@@ -37,7 +37,8 @@ class SideMenu: UIView, UITableViewDelegate, UITableViewDataSource {
     }
   
     func readJsonFromBunble() {
-        if let path = Bundle.main.path(forResource: "SideMenuNew", ofType: "json") {
+        let bundle = Bundle(for: self.classForCoder)
+        if let path = bundle.path(forResource: "SideMenuNew", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 let sideMenu = try! JSON(data: data)

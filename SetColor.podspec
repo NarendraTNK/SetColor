@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name          = "SetColor"
-  spec.version       = "1.0.16"
+  spec.version       = "1.0.17"
   spec.summary       = "SetColor pod use for set color to view"
   spec.description   = <<-DESC
                       Lightwidth and small size easy to integrated

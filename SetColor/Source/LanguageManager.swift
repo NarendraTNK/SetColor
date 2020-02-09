@@ -189,7 +189,7 @@ fileprivate extension Bundle {
         
         let orginalSelector = #selector(localizedString(forKey:value:table:))
         let swizzledSelector = #selector(customLocaLizedString(forKey:value:table:))
-        
+/Users/hfcb/Documents/MakeIt/SetColor/SetColor/Source/SideMenu.swift
         let orginalMethod = class_getInstanceMethod(self, orginalSelector)
         let swizzledMethod = class_getInstanceMethod(self, swizzledSelector)
         
@@ -203,8 +203,8 @@ fileprivate extension Bundle {
     }
     
     @objc  private func customLocaLizedString(forKey key:String,value:String?,table:String?)->String{
-        let podBundle = Bundle(identifier: "org.cocoapods.SetColor")
-        if let bundle = podBundle?.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj"){
+        let podBundle = Bundle(for: self.classForCoder)
+        if let bundle = podBundle.path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj"){
         //path(forResource: LanguageManager.shared.currentLanguage.rawValue, ofType: "lproj"),
             let langBundle = Bundle(path: bundle)
             return (langBundle?.customLocaLizedString(forKey: key, value: value, table: table))!
