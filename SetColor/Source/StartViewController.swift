@@ -38,6 +38,7 @@ public class StartViewController: UIViewController {
          }else if (sender.selectedSegmentIndex == 3){
             LanguageManager.shared.currentLanguage = .th
          }
+        updateLanguage()
      }
     
     func updateLanguage()  {
